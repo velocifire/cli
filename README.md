@@ -13,37 +13,37 @@ display the help message. You can also use the `--help` flag:
 
 ### Common Commands
 
-The two primary commands when using the Velocifire CLI are `start`, which will start a timing session and `stop` to end it. Both commands require a few arguments to be passed in, primarily `authkey`, `service` and `session`.
+The two primary commands when using the Velocifire CLI are `start`, which will start a timing session and `stop` to end it. Both commands require a few arguments to be passed in, primarily `auth_key`, `service_name` and `session_id`.
 
-#### Parameter: authkey
+#### Parameter: auth_key
 
-The `authkey` is a unique key that is used to authenticate the user. It is used to identify the user and to ensure that the user has the correct permissions to access the service.
+The `auth_key` is a unique key that is used to authenticate the user. It is used to identify the user and to ensure that the user has the correct permissions to access the service.
 
-#### Parameter: service
+#### Parameter: service_name
 
-The `service` parameter is used to identify the service that is being measured. This is used to group the measurements together and to help identify the service that is being measured.
+The `service_name` parameter is used to identify the service that is being measured. This is used to group the measurements together and to help identify the service that is being measured.
   
-When used within a CI/CD pipeline, the `service` parameter can be set to the name of the pipeline or the name of the service being measured.
+When used within a CI/CD pipeline, the `service_name` parameter can be set to the name of the pipeline or the name of the service being measured.
 
-#### Parameter: session
+#### Parameter: session_id
 
-The `session` is a unique key that is used to identify the session. The key should be unique for the service being measured. This is used to group the measurements together and to help identify the session that is being measured.
+The `session_id` is a unique key that is used to identify the session. The key should be unique for the service being measured. This is used to group the measurements together and to help identify the session that is being measured.
 
-When used within a CI/CD pipeline, the `session` parameter can be set to the build number or the commit hash.
+When used within a CI/CD pipeline, the `session_id` parameter can be set to the build number or the commit hash.
 
 ### General Example
 
-    $ velocifire start --authkey <authkey> --service <service> --session <session>
+    $ velocifire start --auth_key <auth_key> --service_name <service> --session_id <session>
 
-    $ velocifire stop --authkey <authkey> --service <service> --session <session>
+    $ velocifire stop --auth_key <auth_key> --service_name <service> --session_id <session>
 
 ### Example when used in CI/CD
 
-To record the performance of a CI/CD pipeline execution, you can use the `start` command at the beginning of the pipeline and the `stop` command at the end of the pipeline. The `service` parameter can be set to the name of the pipeline and the `session` parameter can be set to the build number or the commit hash.
+To record the performance of a CI/CD pipeline execution, you can use the `start` command at the beginning of the pipeline and the `stop` command at the end of the pipeline. The `service_name` parameter can be set to the name of the pipeline and the `session_id` parameter can be set to the build number or the commit hash.
 
-    $ velocifire start --authkey <authkey> --service myreactapp --session 432
+    $ velocifire start --auth_key <auth_key> --service_name myreactapp --session_id 432
 
-    $ velocifire stop --authkey <authkey> --service myreactapp --session 432
+    $ velocifire stop --auth_key <auth_key> --service_name myreactapp --session_id 432
 
 ## Installation
 
